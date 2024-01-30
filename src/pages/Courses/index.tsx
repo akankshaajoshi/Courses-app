@@ -6,9 +6,9 @@ import Spinner from "@/components/shared/Spinner";
 import { Course } from "@/types/Course";
 
 const Index = () => {
-  const { data, isLoading } = useGetCoursesQuery();
-  const [searchParams, setSearchParams] = useState("");
-  const [filteredData, setFilteredData] = useState([]);
+  const { data, isLoading } = useGetCoursesQuery("");
+  const [searchParams, setSearchParams] = useState<string>("");
+  const [filteredData, setFilteredData] = useState<Course[]>([]);
 
   const filterByNameOrInstructor = (searchKey: string) => {
     return data.filter(
